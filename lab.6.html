@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+        
+    <meta charset="UTF-8">
+
+    <title>Project Benchmark Capability/Price</title>
+    
+    <script src="jquery-3.2.1.js"></script>
+    
+    <script src="js/jquery.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style_ok.css" rel="stylesheet">
+    
+    <link rel="Shortcut Icon" type="image/x-icon" href="img\cp02.ico"/>
+
+    </head>
+
+    <body>
+     
+
+    <nav class="navbar navbar-white">
+      <div class="container" color="blue">
+        <img class="img-responsive" src="img\logo.png" alt="LOGO">
+      </div>  
+    </nav>
+    
+    <div class="container">
+      
+      <div class="jumbotron">    
+      
+          <div class="form-group">
+            <label for="device">裝置</label>
+            <input type="text" class="form-control" id="device">
+          </div>    
+  
+          <div class="form-group">
+            <label for="score">分數</label>
+            <input type="number" class="form-control" id="score">
+          </div>
+          
+          <div class="form-group">
+            <label for="money">價格</label>
+            <input type="number" class="form-control" id="money">
+          </div>
+          
+            <button type="button" class="btn btn-primary" onclick="transcp()">開始計算</button>
+            <p>          
+          
+          <div class="form-group">
+            <label for="result">C/P值</label>
+            <input type="text" class="form-control" id="result">
+          </div>   
+        
+      </div>
+      
+     </div>
+     
+      <button type="button" class="btn btn-danger" onclick="insRow()">加入比較</button>
+  
+      <table id="myTable" border="1">
+        
+      <tr>
+      	<td>行1 列1</td>
+      	<td>行1 列2</td>
+       	<td>行1 列1</td>
+      	<td>行1 列2</td>     	
+      </tr>
+
+      </table>
+      <br>
+    
+    <script>
+    
+    function transcp() { 
+  	  var score = document.getElementById("score").value;
+  	  var money = document.getElementById("money").value;
+  	  document.getElementById("result").value = (Math.ceil(score / money));
+    }    
+    
+    function insRow(){
+    	var r=document.getElementById('myTable').insertRow(1);//1為從第二行開始寫入，數值0表格會由下往上排序
+    	var w=r.insertCell(0);
+    	var x=r.insertCell(1);
+    	var y=r.insertCell(2);
+    	var z=r.insertCell(3);	
+    	
+      var device = document.getElementById("device");
+      var score = document.getElementById("score");
+    	var money = document.getElementById("money");
+    	var result = document.getElementById("result");	
+	
+    	w.innerHTML = device.value;
+    	x.innerHTML = score.value;
+     	y.innerHTML = money.value;
+    	z.innerHTML = result.value;   
+    }
+    </script>      
+
+      
+    </body>
+
+</html>

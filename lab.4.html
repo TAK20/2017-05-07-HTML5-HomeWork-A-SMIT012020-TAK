@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+        
+    <meta charset="UTF-8">
+
+    <title>Project Benchmark Capability/Price</title>
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style_ok.css" rel="stylesheet">  
+    <link rel="Shortcut Icon" type="image/x-icon" href="img\cp02.ico"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+
+ 
+    </head>
+
+    <body>
+     
+
+    <nav class="navbar navbar-white">
+      <div class="container" color="blue">
+        <img class="img-responsive" src="img\logo.png" alt="LOGO">
+      </div>  
+    </nav>
+    
+    <div class="container">
+      
+      <div class="jumbotron">    
+      
+          <div class="form-group">
+            <label for="device">裝置</label>
+            <input type="text" class="form-control" id="device">
+          </div>    
+  
+          <div class="form-group">
+            <label for="score">分數</label>
+            <input type="number" class="form-control" id="score">
+          </div>
+          
+          <div class="form-group">
+            <label for="money">價格</label>
+            <input type="number" class="form-control" id="money">
+          </div>
+          
+            <button type="button" class="btn btn-primary" onclick="transcp()">開始計算</button>
+            <p>          
+          
+          <div class="form-group">
+            <label for="result">C/P值</label>
+            <input type="text" class="form-control" id="result">
+          </div>   
+        
+      </div>
+      
+    </div>
+     
+    <div class="container">
+      
+        <button type="button" class="btn btn-danger" onclick="insRow()">加入比較</button>
+        <p>
+        <h2>比較表</h2>     
+        <ol id="list"></ol>
+      
+    </div>  
+    
+    <script>
+    function transcp() { 
+	  var score = document.getElementById("score").value;
+	  var money = document.getElementById("money").value;
+	  document.getElementById("result").value = (Math.ceil(score / money));
+    }
+
+    function insRow(){
+    var list= document.getElementById("list");
+    var device = document.getElementById("device");
+    var score = document.getElementById("score");
+	  var money = document.getElementById("money");
+	  var result = document.getElementById("result");
+    list.innerHTML += "<li>" + device.value + "&nbsp;&nbsp;&nbsp;" + score.value + "&nbsp;&nbsp;&nbsp;" + money.value + "&nbsp;&nbsp;&nbsp;" + result.value + "</li>";  
+    }
+    
+    </script>
+        
+    
+    </body>
+
+</html>

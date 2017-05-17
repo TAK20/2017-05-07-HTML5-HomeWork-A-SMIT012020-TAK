@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    <meta charset="UTF-8">
+
+    <title>Project Benchmark</title>
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style_ok.css" rel="stylesheet">    
+ 
+    </head>
+
+    <body>
+
+    <nav class="navbar navbar-white">
+      <div class="container">
+        <img class="img-responsive" src="img\logo.png" alt="LOGO">
+      </div>  
+    </nav>
+    
+    <div class="container">
+      
+      <div class="jumbotron">    
+      
+          <div class="form-group">
+            <label for="device">裝置</label>
+            <input type="text" class="form-control" id="device">
+          </div>    
+  
+          <div class="form-group">
+            <label for="score">分數</label>
+            <input type="text" class="form-control" id="score">
+          </div>
+          
+          <div class="form-group">
+            <label for="money">價格</label>
+            <input type="text" class="form-control" id="money">
+          </div>
+          
+            <button type="button" class="btn btn-primary" onclick="transcp()">開始計算</button>
+          <p></p>
+          
+          <div class="form-group">
+            <label for="result">C/P值</label>
+            <input type="text" class="form-control" id="result">
+          </div>   
+  
+        <button type="button" class="btn btn-danger" onclick="add()">加入比較</button>
+        <p></p>
+        
+      </div>
+      
+    </div>
+     
+
+    <script>
+    function transcp() { 
+	  var score = document.getElementById("score").value;
+	  var money = document.getElementById("money").value;
+	  document.getElementById("result").value = (Math.ceil(score / money));
+    }
+  
+        
+  
+    function add(){ 
+    var list = document.getElementById("list").value;
+    var device = document.getElementById("device").value;
+    document.write("id=device")
+    }
+        
+    </script>    
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>    
+    
+    </body>
+
+</html>
